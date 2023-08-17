@@ -1,2 +1,9 @@
-siji font
-mononoki font
+Fonts
+siji
+mononoki
+
+On Void
+base-devel libX11-devel libXft-devel libXinerama-devel freetype-devel fontconfig-devel
+
+On Arch
+base-devel libx11 libxft libxinerama freetype2 fontconfig
