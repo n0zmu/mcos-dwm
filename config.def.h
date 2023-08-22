@@ -8,8 +8,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
-static const char *fonts[]          = { "mononoki:size=9", "siji:size=10" };
-static const char dmenufont[]       = "mononoki:size=9";
+static const char *fonts[]          = { "monoid:size=9", "siji:size=10" };
+static const char dmenufont[]       = "monoid:size=9";
 static unsigned int baralpha        = 0xd0;
 static unsigned int borderalpha     = OPAQUE;
 static const char col_gray1[]       = "#364F6B";
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "\uE174", "\uE175", "\uE176", "\uE177", "\uE178", "\uE179", "\uE17A", "\uE17B", "\uE17C" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -32,8 +32,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Burp",     NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -45,7 +44,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "\uE005",      tile },    /* first entry is default */
-	{ "\uE0B1",      NULL },    /* no layout function means floating behavior */
+	{ "\uE001",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
