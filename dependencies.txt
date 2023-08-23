@@ -1,6 +1,6 @@
 Fonts
 siji
-mononoki
+monoid
 
 On Void
 base-devel libX11-devel libXft-devel libXinerama-devel freetype-devel fontconfig-devel
