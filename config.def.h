@@ -8,8 +8,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 5;       /* vertical padding of bar */
 static const int sidepad            = 5;       /* horizontal padding of bar */
-static const char *fonts[]          = { "monoid:size=9", "siji:size=10" };
-static const char dmenufont[]       = "monoid:size=9";
+static const char *fonts[]          = { "monoid:size=10", "siji:size=10" };
+static const char dmenufont[]       = "monoid:size=10";
 static unsigned int baralpha        = 0xd0;
 static unsigned int borderalpha     = OPAQUE;
 static const char col_gray1[]       = "#364F6B";
@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "\uE174", "\uE175", "\uE176", "\uE177", "\uE178", "\uE179", "\uE17A", "\uE17B", "\uE17C" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -32,7 +32,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Burp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Chromium",  NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "Spotify",   NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Burp",      NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -44,7 +46,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "\uE005",      tile },    /* first entry is default */
-	{ "\uE0B1",      NULL },    /* no layout function means floating behavior */
+	{ "\uE001",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -60,9 +62,10 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[] = { "dmenu_run", "-p", "Run:", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_cyan, "-sb", col_cyan, "-sf", col_gray1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_cyan, "-sb", col_cyan, "-sf", col_gray1, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browscmd[] = { "chromium", NULL};
+static const char *strmcmd[]  = { "spotify", NULL };
 static const char *lockcmd[]  = { "slock",  NULL };
 static const char *upvol[]    = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
 static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
@@ -73,6 +76,7 @@ static const Key keys[] = {
 	{ MODKEY,	                XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,           	        XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_b,	   spawn,	   {.v = browscmd } },
+	{ MODKEY,                       XK_s,      spawn,          {.v = strmcmd } },
 	{ MODKEY,			XK_x,	   spawn,	   {.v = lockcmd } },
 	{ MODKEY,                       XK_F9,     spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_F11,    spawn,          {.v = downvol } },
