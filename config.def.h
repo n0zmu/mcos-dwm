@@ -24,7 +24,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "\uE174", "\uE175", "\uE176", "\uE177", "\uE178", "\uE179", "\uE17A", "\uE17B", "\uE17C" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -44,7 +44,7 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "\uE005",      tile },    /* first entry is default */
-	{ "\uE001",      NULL },    /* no layout function means floating behavior */
+	{ "\uE0B1",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
